@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💞 It-Girl Pro Hair Lab 💞</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&family=Shrikhand&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --pink-glam: #ff758c;
+            --pink-soft: #ff7eb3;
+            --pastel-purple: #e2bbfd;
+            --girly-white: #fffdf9;
+            --neon-glow: rgba(255, 117, 140, 0.4);
+            --text-dark: #3a2232;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Playpen Sans', cursive;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            color: var(--text-dark);
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            margin: 20px 0 40px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Shrikhand', cursive;
+            font-size: 3.8rem;
+            color: #fff;
+            letter-spacing: 1px;
+            text-shadow: 4px 4px 0px var(--pink-glam), 0 0 20px rgba(255,255,255,0.6);
+            transform: rotate(-2deg);
+            margin-bottom: 15px;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--pink-glam);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 20px;
+            border: 2px solid #fff;
+            border-radius: 30px;
+            box-shadow: 0 8px 20px rgba(255, 117, 140, 0.2);
+            display: inline-block;
+        }
+
+        .magazine-box {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 4px solid #fff;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px var(--neon-glow), inset 0 0 20px rgba(255,255,255,0.5);
+            width: 100%;
+            max-width: 850px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout { grid-template-columns: 1fr; }
+        }
+
+        .notebook-card {
+            background: var(--girly-white);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 24px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(58, 34, 50, 0.05);
+        }
+
+        .notebook-card h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, var(--pink-soft), var(--pastel-purple));
+            display: inline-block;
+            padding: 5px 18px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
+        }
+
+        .media-box {
+            width: 100%;
+            height: 240px;
+            background: #fff;
+            border: 3px dashed var(--pink-soft);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .btn {
+            background: linear-gradient(180deg, #ff9eb5 0%, var(--pink-soft) 100%);
+            border: none;
+            color: white;
+            border-radius: 25px;
+            padding: 12px 28px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 6px 15px var(--neon-glow);
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 117, 140, 0.6);
+        }
+
+        .btn-purple { background: linear-gradient(180deg, #ecd5ff 0%, var(--pastel-purple) 100%); color: #6a4187; box-shadow: 0 6px 15px rgba(226, 187, 253, 0.5); }
+        .btn-purple:hover { box-shadow: 0 8px 20px rgba(226, 187, 253, 0.8); }
+
+        .color-select-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .color-option {
+            border: 3px solid #fff;
+            border-radius: 16px;
+            height: 55px;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+
+        .color-option:hover { transform: scale(1.08) rotate(2deg); }
+        .color-option.selected { border: 3px solid var(--pink-glam); box-shadow: 0 0 15px var(--pink-glam); }
+        .color-option.selected::after { content: '💖'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.3rem; }
+
+        .result-section {
+            background: #fff;
+            border: 3px solid var(--pastel-purple);
+            border-radius: 24px;
+            padding: 25px;
+            margin-top: 25px;
+            display: none; 
+            box-shadow: 0 15px 35px rgba(226, 187, 253, 0.3);
+            animation: glamIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes glamIn {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .recipe-title {
+            font-family: 'Shrikhand', cursive;
+            font-size: 2.2rem;
+            color: var(--pink-glam);
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0px rgba(254, 207, 239, 0.6);
+        }
+
+        .recipe-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) { .recipe-details { grid-template-columns: 1fr; } }
+
+        .recipe-card {
+            background: #fff9fb;
+            border: 2px dashed var(--pink-soft);
+            border-radius: 18px;
+            padding: 20px;
+        }
+
+        .recipe-card h4 {
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            color: var(--pink-glam);
+            font-weight: 700;
+        }
+
+        .recipe-card p, .recipe-card li { font-size: 1rem; line-height: 1.5; color: #55444e; }
+        .recipe-card ul, .recipe-card ol { padding-left: 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>💞 It-Girl Pro Hair Lab 💞</h1>
+        <p class="subtitle">Salon-Grade Aesthetic Formulas (Milbon, Wella, L'Oreal) ✨</p>
+    </header>
+
+    <div class="magazine-box">
+        <div class="grid-layout">
+            <div class="notebook-card">
+                <h2>1. Scan Base Color</h2>
+                <div class="media-box" id="webcam-container">
+                    <video id="webcam" autoplay playsinline></video>
+                </div>
+                <button class="btn" onclick="startWebcam()">📸 Open Camera</button>
+            </div>
+
+            <div class="notebook-card">
+                <h2>2. Target Shade</h2>
+                <div class="media-box" style="display: block; padding: 15px; height: 240px; overflow-y: auto; background: #fff9fb;">
+                    <div class="color-select-grid">
+                        <div class="color-option" style="background: #A79277;" title="Muted Greige" onclick="selectColor('Greige', this)"></div>
+                        <div class="color-option" style="background: #7D8ABC;" title="Lavender Ash" onclick="selectColor('Lavender Ash', this)"></div>
+                        <div class="color-option" style="background: #C47B5A;" title="Muted Copper" onclick="selectColor('Copper', this)"></div>
+                        <div class="color-option" style="background: #F1A7B5;" title="Pale Pink" onclick="selectColor('Pale Pink', this)"></div>
+                        <div class="color-option" style="background: #5A524E;" title="Matt Khaki" onclick="selectColor('Matt Khaki', this)"></div>
+                        <div class="color-option" style="background: #4A3E3D;" title="Chocolat Brown" onclick="selectColor('Chocolat', this)"></div>
+                    </div>
+                </div>
+                <button class="btn btn-purple" onclick="generateRecipe()">🧪 Mix Formula</button>
+            </div>
+        </div>
+
+        <div class="result-section" id="result-box">
+            <div class="recipe-title">✨ Pro Color Mixing Sheet ✨</div>
+            <div class="recipe-details">
+                <div class="recipe-card">
+                    <h4>📦 Salon-Exclusive Brand Formulas</h4>
+                    <div id="dye-product" style="font-size: 0.95rem; color: #b53471;"></div>
+                </div>
+                <div class="recipe-card">
+                    <h4>⏱️ Salon Sectioning & Application Guide</h4>
+                    <ol id="dye-steps" style="padding-left: 20px; font-size: 0.95rem;"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedTarget = "";
+
+        // 1. Target Color Specifications
+        const targetSpecs = {
+            'Greige': { level: 9, requiresBleach: false },
+            'Lavender Ash': { level: 9, requiresBleach: true },
+            'Copper': { level: 7, requiresBleach: false },
+            'Pale Pink': { level: 10, requiresBleach: true },
+            'Matt Khaki': { level: 8, requiresBleach: false },
+            'Chocolat': { level: 6, requiresBleach: false }
+        };
+
+        async function startWebcam() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } });
+                document.getElementById('webcam').srcObject = stream;
+            } catch (err) {
+                alert("카메라 접근이 차단되었습니다! 브라우저 권한을 확인해주세요. 📸");
+            }
+        }
+
+        function selectColor(colorName, element) {
+            selectedTarget = colorName;
+            document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        // 💡 [NEW] 실제 웹캠 화면에서 중앙부 픽셀 색상을 추출하여 분석하는 기능
+        function analyzeBaseHairFromVideo() {
+            const video = document.getElementById('webcam');
+            
+            // 카메라가 꺼져있을 경우 기본값 반환
+            if (!video.srcObject) {
+                return { level: 5, undertone: "Red-Orange", hex: "#4A2E2B" }; 
+            }
+
+            // 비디오 화면을 캡처할 숨겨진 캔버스 생성
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // 화면 중앙의 100x100 픽셀 영역 추출 (이마/정수리 부근을 맞추기 위함)
+            const size = 100;
+            const startX = (canvas.width - size) / 2;
+            const startY = (canvas.height - size) / 2;
+            
+            let imageData;
+            try {
+                imageData = ctx.getImageData(startX, startY, size, size).data;
+            } catch (e) {
+                return { level: 5, undertone: "Red-Orange", hex: "#000" };
+            }
+
+            // 평균 RGB 값 계산
+            let r = 0, g = 0, b = 0;
+            const pixelCount = (imageData.length / 4);
+            for(let i = 0; i < imageData.length; i += 4) {
+                r += imageData[i];
+                g += imageData[i+1];
+                b += imageData[i+2];
+            }
+            r = Math.round(r / pixelCount);
+            g = Math.round(g / pixelCount);
+            b = Math.round(b / pixelCount);
+
+            // RGB를 이용해 체감 밝기(Luminance) 도출
+            const luminance = (0.299 * r + 0.587 * g + 0.114 * b);
+            
+            // 밝기에 따른 모발 레벨 판별 (명도 기준)
+            let level, undertone;
+            if (luminance < 40) { level = 4; undertone = "Red"; }
+            else if (luminance < 65) { level = 5; undertone = "Red-Orange"; }
+            else if (luminance < 90) { level = 6; undertone = "Orange"; }
+            else if (luminance < 120) { level = 7; undertone = "Orange-Yellow"; }
+            else if (luminance < 155) { level = 8; undertone = "Yellow"; }
+            else if (luminance < 190) { level = 9; undertone = "Pale Yellow"; }
+            else { level = 10; undertone = "Palest Yellow"; }
+
+            // 추출한 색상을 HEX로 변환 (UI 표시용)
+            const hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+
+            return { level, undertone, hex };
+        }
+
+        function generateRecipe() {
+            if (!selectedTarget) {
+                alert("Pick your dream aesthetic shade first! 💖");
+                return;
+            }
+
+            const video = document.getElementById('webcam');
+            if (!video.srcObject) {
+                alert("정확한 분석을 위해 📸 Open Camera 버튼을 먼저 눌러주세요!");
+                return;
+            }
+
+            const productEl = document.getElementById('dye-product');
+            const stepsEl = document.getElementById('dye-steps');
+            const resultBox = document.getElementById('result-box');
+            
+            // 2. Run ACTUAL Hair Diagnosis
+            const baseHair = analyzeBaseHairFromVideo();
+            const targetInfo = targetSpecs[selectedTarget];
+            const levelDiff = targetInfo.level - baseHair.level;
+
+            // 3. Dynamic Developer Calculation
+            let developerStr = "6%"; 
+            let actionType = "Standard Lift";
+
+            if (levelDiff <= 0) {
+                developerStr = "3%";
+                actionType = "Tone-Down / Same Level Deposit";
+            } else if (levelDiff <= 2) {
+                developerStr = "6%";
+                actionType = "1-2 Level Lift";
+            } else {
+                developerStr = "9%";
+                actionType = "High Lift";
+            }
+
+            const recipeDB = {
+                'Greige': {
+                    brandFormulas: `<b>• MILBON:</b> Ordeve Addicthy [Gray Pearl 9] + [Sapphire 9] (Ratio 3:1) + ${developerStr} Developer<br><br> <b>• WELLA:</b> Koleston Perfect 8/91 (Pearl Ash) + ${developerStr} Vol<br><br> <b>• L'OREAL:</b> Majirel 8.11 (Deep Ash Blonde)`,
+                    steps: [
+                        `Diagnosis: Base Level ${baseHair.level} (${baseHair.undertone} undertone). Action: ${actionType}.`,
+                        "Perfect for neutralized orange-yellow bases.",
+                        "Apply to the regrowth area (roots) first if there's any black hair.",
+                        "Drag down the mixture to the lengths and ends for the last 15 minutes.",
+                        "Total processing time: 30 minutes. Rinse with a low-pH color lock shampoo."
+                    ]
+                },
+                'Lavender Ash': {
+                    brandFormulas: `<b>• MILBON:</b> Ordeve Addicthy [Lavender Pearl 9] + [Amethyst 9] (Ratio 1:1) + ${developerStr} Developer<br><br> <b>• WELLA:</b> Koleston Perfect 9/16 + 8/96 (Ratio 2:1)<br><br> <b>• L'OREAL:</b> Majirel 9.21 (Iridescent Ash Blonde)`,
+                    steps: [
+                        `Diagnosis: Base Level ${baseHair.level} (${baseHair.undertone} undertone). Action: ${actionType}.`,
+                        "Requires a clear blonde base (Level 9-10) to avoid turning muddy brown.",
+                        "Apply rapidly from the nape of the neck up to the crown to maintain uniform tone.",
+                        "Leave on for exactly 25 minutes. Do not overheat.",
+                        "Rinse with cool water to keep the fragile purple pigments locked in."
+                    ]
+                },
+                'Copper': {
+                    brandFormulas: `<b>• MILBON:</b> Ordeve [9-nCh Chocolat] + [9-crKG Coral Khaki] (Ratio 2:1) + ${developerStr} Developer<br><br> <b>• WELLA:</b> Koleston Perfect 7/43 + 8/34 (Ratio 1:1)<br><br> <b>• L'OREAL:</b> Majirel 7.4 (Copper Blonde)`,
+                    steps: [
+                        `Diagnosis: Base Level ${baseHair.level} (${baseHair.undertone} undertone). Action: ${actionType}.`,
+                        "Can be done on a natural virgin hair base.",
+                        "Apply 2cm away from the scalp first to avoid 'hot roots' caused by body heat.",
+                        "Apply to the roots during the last 12 minutes of processing.",
+                        "Total time: 35 minutes. Emulsify well with water before rinsing."
+                    ]
+                },
+                'Pale Pink': {
+                    brandFormulas: `<b>• MILBON:</b> Ordeve Addicthy [Pale Pink] or [Clear] + [Pink] (Ratio 5:1) + 1.5% - 3% Developer<br><br> <b>• WELLA:</b> Color Touch 10/65 or Instamatic Pink Pop<br><br> <b>• L'OREAL:</b> MAJIFASHION Pastel Pink`,
+                    steps: [
+                        `Diagnosis: Base Level ${baseHair.level} (${baseHair.undertone} undertone). Action: Pre-lightening required.`,
+                        "Apply on towel-dried, damp hair for the smoothest pastel saturation.",
+                        "Saturate thoroughly and massage the hair strands gently.",
+                        "Process for 15-20 minutes. Wash with acidic conditioner to shut the cuticles fast."
+                    ]
+                },
+                'Matt Khaki': {
+                    brandFormulas: `<b>• MILBON:</b> Ordeve [9-mAs Matt Ash] or Addicthy [Emerald 9] + ${developerStr} Developer<br><br> <b>• WELLA:</b> Koleston Perfect 8/2 (Matt Blonde)<br><br> <b>• L'OREAL:</b> Majirel 8.7 (Matt Blonde)`,
+                    steps: [
+                        `Diagnosis: Base Level ${baseHair.level} (${baseHair.undertone} undertone). Action: ${actionType}.`,
+                        "Designed beautifully to cancel out stubborn red undertones in dark hair.",
+                        "Apply uniformly from roots to ends if your base color is consistent.",
+                        "Let it process for 30 minutes.",
+                        "Note: If hair is heavily bleached, this can turn into an intense green, so avoid on level 10+ base."
+                    ]
+                },
+                'Chocolat': {
+                    brandFormulas: `<b>• MILBON:</b> Ordeve [7-nBG Noble Beige] + [7-sMA Sepia Pearl] (Ratio 1:1) + ${developerStr} Developer<br><br> <b>• WELLA:</b> Koleston Perfect 6/77 (Deep Brown)<br><br> <b>• L'OREAL:</b> Majirel 5.35 (Warm Chocolate Brown)`,
+                    steps: [
+                        `Diagnosis: Base Level ${baseHair.level} (${baseHair.undertone} undertone). Action: ${actionType}.`,
+                        "Super forgiving and classy shade. Perfect for covering uneven patchy bleach.",
+                        "Apply evenly throughout the head.",
+                        "Process for 30 minutes at room temperature.",
+                        "Provides high shine and locks deep within the cortex. Finish with an oil treatment."
+                    ]
+                }
+            };
+
+            const selectedRecipe = recipeDB[selectedTarget];
+            productEl.innerHTML = selectedRecipe.brandFormulas;
+            stepsEl.innerHTML = "";
+
+            // 4. Inject Pre-lighten Warning
+            if (targetInfo.requiresBleach && baseHair.level < 9) {
+                const alertCard = document.createElement('div');
+                alertCard.style.cssText = "background: #fff0f3; border-left: 4px solid var(--pink-glam); padding: 12px; border-radius: 8px; margin-bottom: 15px; font-weight: 700; color: #d63031; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(255, 117, 140, 0.15);";
+                alertCard.innerHTML = `⚠️ TECHNICAL NOTICE: Your underlying pigment is Level ${baseHair.level} (${baseHair.undertone}). To achieve a true ${selectedTarget}, you must be Level 9/10 Yellow. Pre-lighten using Milbon Addicthy Bleach Line with 6% Oxydent first before applying this formula!`;
+                stepsEl.appendChild(alertCard);
+            }
+
+            selectedRecipe.steps.forEach((step, index) => {
+                const li = document.createElement('li');
+                if (index === 0) {
+                    // 추출된 색상을 미리 보여주는 작은 컬러 칩 추가
+                    li.innerHTML = `<strong><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:${baseHair.hex}; border:1px solid #ccc; margin-right:5px;"></span>${step}</strong>`;
+                } else {
+                    li.innerText = step;
+                }
+                li.style.marginBottom = "8px";
+                stepsEl.appendChild(li);
+            });
+
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
