@@ -1,486 +1,1611 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💞 It-Girl Pro Hair Lab 💞</title>
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&family=Shrikhand&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --pink-glam: #ff758c;
-            --pink-soft: #ff7eb3;
-            --pastel-purple: #e2bbfd;
-            --girly-white: #fffdf9;
-            --neon-glow: rgba(255, 117, 140, 0.4);
-            --text-dark: #3a2232;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>It-Girl Hair Lab</title>
+  <meta name="description" content="Your hair. Your inspo. The route between them.">
 
-        * {
-            box-sizing: border-box;
-            font-family: 'Playpen Sans', cursive;
-            margin: 0;
-            padding: 0;
-        }
+  <meta property="og:title" content="It-Girl Hair Lab">
+  <meta property="og:description" content="Your hair. Your inspo. The route between them.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/og-card.jpg">
 
-        body {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
-            color: var(--text-dark);
-            padding: 30px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="It-Girl Hair Lab">
+  <meta name="twitter:description" content="Your hair. Your inspo. The route between them.">
+  <meta name="twitter:image" content="/og-card.jpg">
 
-        header {
-            margin: 20px 0 40px 0;
-            text-align: center;
-        }
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23E8DFD2' width='32' height='32'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23F2D34F' stroke='%23252126' stroke-width='2'/%3E%3C/svg%3E">
 
-        h1 {
-            font-family: 'Shrikhand', cursive;
-            font-size: 3.8rem;
-            color: #fff;
-            letter-spacing: 1px;
-            text-shadow: 4px 4px 0px var(--pink-glam), 0 0 20px rgba(255,255,255,0.6);
-            transform: rotate(-2deg);
-            margin-bottom: 15px;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        p.subtitle {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--pink-glam);
-            background: rgba(255, 255, 255, 0.9);
-            padding: 8px 20px;
-            border: 2px solid #fff;
-            border-radius: 30px;
-            box-shadow: 0 8px 20px rgba(255, 117, 140, 0.2);
-            display: inline-block;
-        }
+  <style>
+    :root {
+      /* OLD COMPUTER / PAGE */
+      --shell: #E8DFD2;
+      --paper: #FFFDF7;
+      --warm-white: #F8F3EA;
 
-        .magazine-box {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            border: 4px solid #fff;
-            border-radius: 32px;
-            box-shadow: 0 20px 40px var(--neon-glow), inset 0 0 20px rgba(255,255,255,0.5);
-            width: 100%;
-            max-width: 850px;
-            padding: 30px;
-            margin-bottom: 40px;
-        }
+      /* EARLY WEB SCREEN COLORS */
+      --screen-blue: #D9EEF4;
+      --aqua: #A8D8D8;
+      --lilac: #D8C8EE;
 
-        .grid-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
+      /* GIRL / MAGAZINE COLORS */
+      --pink: #E66F98;
+      --berry: #A93659;
 
-        @media (max-width: 768px) {
-            .grid-layout { grid-template-columns: 1fr; }
-        }
+      /* CLUELESS */
+      --cher-yellow: #F2D34F;
 
-        .notebook-card {
-            background: var(--girly-white);
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            border-radius: 24px;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 10px 25px rgba(58, 34, 50, 0.05);
-        }
+      /* CONTRAST */
+      --ink: #252126;
+      --soft-gray: #B8AEA5;
 
-        .notebook-card h2 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 15px;
-            background: linear-gradient(45deg, var(--pink-soft), var(--pastel-purple));
-            display: inline-block;
-            padding: 5px 18px;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
-        }
+      --serif: "DM Serif Display", Georgia, serif;
+      --sans: Inter, Helvetica, Arial, sans-serif;
+      --script: Caveat, "Segoe Print", cursive;
+    }
 
-        .media-box {
-            width: 100%;
-            height: 240px;
-            background: #fff;
-            border: 3px dashed var(--pink-soft);
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            margin-bottom: 15px;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--warm-white);
+      min-height: 100vh;
+      line-height: 1.45;
+    }
 
-        .btn {
-            background: linear-gradient(180deg, #ff9eb5 0%, var(--pink-soft) 100%);
-            border: none;
-            color: white;
-            border-radius: 25px;
-            padding: 12px 28px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 6px 15px var(--neon-glow);
-            transition: all 0.2s ease;
-        }
+    .page {
+      width: min(920px, calc(100% - 1rem));
+      margin: 0.65rem auto 2rem;
+    }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 117, 140, 0.6);
-        }
+    .window {
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      box-shadow: 6px 6px 0 rgba(37, 33, 38, 0.12);
+    }
 
-        .btn-purple { background: linear-gradient(180deg, #ecd5ff 0%, var(--pastel-purple) 100%); color: #6a4187; box-shadow: 0 6px 15px rgba(226, 187, 253, 0.5); }
-        .btn-purple:hover { box-shadow: 0 8px 20px rgba(226, 187, 253, 0.8); }
+    .chrome {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 0.65rem;
+      border-bottom: 2px solid var(--ink);
+      background: var(--shell);
+    }
 
-        .color-select-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-        }
+    .chrome .dot {
+      width: 10px;
+      height: 10px;
+      border: 1.5px solid var(--ink);
+      background: var(--paper);
+      flex-shrink: 0;
+    }
+    .chrome .dot.a { background: var(--pink); }
+    .chrome .dot.b { background: var(--cher-yellow); }
+    .chrome .dot.c { background: var(--lilac); }
 
-        .color-option {
-            border: 3px solid #fff;
-            border-radius: 16px;
-            height: 55px;
-            cursor: pointer;
-            position: relative;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: all 0.2s;
-        }
+    .chrome .url {
+      flex: 1;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1.5px solid var(--ink);
+      padding: 0.28rem 0.5rem;
+    }
 
-        .color-option:hover { transform: scale(1.08) rotate(2deg); }
-        .color-option.selected { border: 3px solid var(--pink-glam); box-shadow: 0 0 15px var(--pink-glam); }
-        .color-option.selected::after { content: '💖'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.3rem; }
+    .masthead {
+      padding: 0.7rem 0.9rem 0.55rem;
+      border-bottom: 1.5px solid var(--ink);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      background: var(--warm-white);
+    }
 
-        .result-section {
-            background: #fff;
-            border: 3px solid var(--pastel-purple);
-            border-radius: 24px;
-            padding: 25px;
-            margin-top: 25px;
-            display: none; 
-            box-shadow: 0 15px 35px rgba(226, 187, 253, 0.3);
-            animation: glamIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+    .brand-lockup h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.55rem, 5vw, 2.05rem);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+    }
 
-        @keyframes glamIn {
-            0% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
+    .brand-lockup h1 span {
+      display: block;
+      color: var(--berry);
+    }
 
-        .recipe-title {
-            font-family: 'Shrikhand', cursive;
-            font-size: 2.2rem;
-            color: var(--pink-glam);
-            text-align: center;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 0px rgba(254, 207, 239, 0.6);
-        }
+    .hand {
+      font-family: var(--script);
+      font-size: clamp(1.05rem, 3.2vw, 1.3rem);
+      color: var(--berry);
+      transform: rotate(-1.5deg);
+      max-width: 16ch;
+      line-height: 1.15;
+      text-align: right;
+    }
 
-        .recipe-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
+    .desk { padding: 0.85rem 0.85rem 1.15rem; }
 
-        @media (max-width: 600px) { .recipe-details { grid-template-columns: 1fr; } }
+    .privacy {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--berry);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.01em;
+    }
 
-        .recipe-card {
-            background: #fff9fb;
-            border: 2px dashed var(--pink-soft);
-            border-radius: 18px;
-            padding: 20px;
-        }
+    .pair {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 0.55rem 0.7rem;
+      align-items: start;
+    }
 
-        .recipe-card h4 {
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            color: var(--pink-glam);
-            font-weight: 700;
-        }
+    @media (max-width: 720px) {
+      .pair { grid-template-columns: 1fr; gap: 1rem; }
+      .arrow { display: none; }
+      .hand { text-align: left; transform: none; max-width: none; }
+    }
 
-        .recipe-card p, .recipe-card li { font-size: 1rem; line-height: 1.5; color: #55444e; }
-        .recipe-card ul, .recipe-card ol { padding-left: 20px; }
-    </style>
+    .col-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .pair > div:first-child .col-label { color: var(--berry); }
+    .pair > div:last-child .col-label { color: #6b5f9a; }
+
+    .arrow {
+      align-self: center;
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      color: var(--pink);
+      padding-top: 2.2rem;
+    }
+
+    .shot {
+      position: relative;
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      padding: 0.4rem 0.4rem 0.75rem;
+    }
+
+    .shot.your { transform: rotate(-0.8deg); }
+    .shot.inspo { transform: rotate(1deg); }
+
+    .tape {
+      position: absolute;
+      top: -9px;
+      left: 50%;
+      width: 58px;
+      height: 16px;
+      margin-left: -29px;
+      background: var(--cher-yellow);
+      border: 1px solid var(--ink);
+      transform: rotate(-3deg);
+      z-index: 5;
+      opacity: 0.92;
+    }
+
+    .sticker-note {
+      position: absolute;
+      right: -8px;
+      bottom: 10px;
+      z-index: 5;
+      font-family: var(--script);
+      font-size: 1.05rem;
+      color: var(--ink);
+      background: var(--lilac);
+      border: 1.5px solid var(--ink);
+      padding: 0.12rem 0.4rem;
+      transform: rotate(7deg);
+      pointer-events: none;
+    }
+
+    .frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background: var(--shell);
+      border: 2px solid var(--ink);
+      overflow: hidden;
+    }
+
+    .frame.sampling {
+      cursor: crosshair;
+      box-shadow: inset 0 0 0 3px var(--pink);
+    }
+
+    .frame video,
+    .frame img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .marker-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .placeholder {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      text-align: center;
+      color: var(--soft-gray);
+      font-size: 0.9rem;
+      font-weight: 500;
+      pointer-events: none;
+      background: var(--paper);
+    }
+
+    [hidden] { display: none !important; }
+
+    .marker {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      margin-left: -7px;
+      margin-top: -7px;
+      border: 2px solid #fff;
+      outline: 1.5px solid var(--ink);
+      border-radius: 50%;
+      display: none;
+    }
+
+    .marker.roots { background: var(--cher-yellow); }
+    .marker.mids { background: var(--pink); }
+    .marker.ends { background: var(--aqua); }
+    .marker.dream { background: var(--lilac); }
+
+    .marker .tag {
+      position: absolute;
+      left: 16px;
+      top: -4px;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      background: var(--paper);
+      border: 1.5px solid var(--ink);
+      padding: 0.08rem 0.28rem;
+      white-space: nowrap;
+      color: var(--ink);
+    }
+
+    .prompt {
+      margin-top: 0.55rem;
+      min-height: 1.5em;
+      text-align: center;
+      font-family: var(--serif);
+      font-size: clamp(0.95rem, 3vw, 1.1rem);
+      letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+
+    .prompt em {
+      font-style: italic;
+      color: var(--berry);
+    }
+
+    .zone-pills {
+      display: flex;
+      justify-content: center;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .zone-pill {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      border: 1.5px solid var(--ink);
+      padding: 0.35rem 0.55rem;
+      background: var(--warm-white);
+      color: var(--soft-gray);
+      min-width: 4.6rem;
+      text-align: center;
+    }
+
+    .zone-pill.active {
+      background: var(--cher-yellow);
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .zone-pill.done {
+      background: var(--pink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.55rem;
+      justify-content: center;
+    }
+
+    .btn {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: 1.5px solid var(--ink);
+      background: var(--paper);
+      color: var(--ink);
+      padding: 0.58rem 0.85rem;
+      cursor: pointer;
+      min-height: 42px;
+    }
+
+    .btn:hover { background: var(--screen-blue); }
+    .btn.soft { background: var(--lilac); }
+    .btn.primary {
+      background: var(--cher-yellow);
+      color: var(--ink);
+      border: 1.5px solid var(--ink);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      padding: 0.85rem 1.35rem;
+      min-width: min(280px, 100%);
+    }
+    .btn.primary:hover {
+      background: var(--pink);
+      border-color: var(--ink);
+      color: #fff;
+    }
+    .btn.primary:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      background: var(--cher-yellow);
+      color: var(--ink);
+    }
+    .btn.ghost { background: transparent; }
+    input[type="file"] { display: none; }
+
+    .history {
+      margin-top: 1rem;
+      border: 2px solid var(--ink);
+      background: var(--screen-blue);
+      padding: 0.85rem 0.9rem;
+      display: none;
+    }
+
+    .history.on { display: block; }
+
+    .history h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 0.7rem;
+    }
+
+    .q { margin-bottom: 0.75rem; }
+    .q:last-child { margin-bottom: 0; }
+    .q p { font-size: 0.92rem; font-weight: 500; margin-bottom: 0.4rem; }
+
+    .choices { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+    .choice {
+      border: 1.5px solid var(--ink);
+      background: var(--paper);
+      padding: 0.5rem 0.8rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      min-height: 40px;
+    }
+
+    .choice.selected {
+      background: var(--cher-yellow);
+      box-shadow: 2px 2px 0 var(--ink);
+    }
+
+    .cta {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* ---------- Results ---------- */
+    #result {
+      display: none;
+      margin-top: 1.15rem;
+      animation: rise 0.35s ease;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .verdict {
+      position: relative;
+      border: 2.5px solid var(--ink);
+      background: linear-gradient(165deg, var(--screen-blue) 0%, var(--lilac) 100%);
+      padding: 1.1rem 1rem 1.15rem;
+      box-shadow: 5px 5px 0 var(--ink);
+      color: var(--ink);
+    }
+
+    .verdict::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 52px;
+      height: 52px;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          var(--cher-yellow) 0 5px,
+          var(--ink) 5px 7px,
+          var(--cher-yellow) 7px 12px
+        );
+      border-left: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .verdict .kicker {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--berry);
+      margin-bottom: 0.25rem;
+    }
+
+    .verdict h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.55rem, 5vw, 2rem);
+      font-weight: 400;
+      margin-bottom: 0.15rem;
+      color: var(--ink);
+    }
+
+    .verdict .lede {
+      font-family: var(--script);
+      font-size: 1.35rem;
+      color: var(--berry);
+      margin-bottom: 0.9rem;
+    }
+
+    .verdict-grid {
+      display: grid;
+      gap: 0.65rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .v-row {
+      border-top: 1.5px solid var(--ink);
+      padding-top: 0.55rem;
+    }
+
+    .v-row .lab {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--berry);
+      margin-bottom: 0.15rem;
+    }
+
+    .v-row p {
+      font-family: var(--serif);
+      font-size: clamp(1.05rem, 3.5vw, 1.2rem);
+      line-height: 1.25;
+      color: var(--ink);
+    }
+
+    .decision {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      border: 1.5px solid var(--ink);
+      padding: 0.22rem 0.45rem;
+      margin: 0.2rem 0 0.35rem;
+      background: var(--paper);
+    }
+
+    .decision.likely { background: var(--pink); color: #fff; }
+    .decision.possible { background: var(--cher-yellow); color: var(--ink); }
+    .decision.avoid { background: var(--aqua); color: var(--ink); }
+
+    .v-note {
+      font-family: var(--sans) !important;
+      font-size: 0.9rem !important;
+      font-weight: 500;
+      color: #5c5358 !important;
+      line-height: 1.35 !important;
+    }
+
+    .after-tone {
+      margin-top: 0.75rem;
+      border: 1.5px solid var(--ink);
+      background: var(--paper);
+      padding: 0.65rem 0.75rem;
+    }
+
+    .after-tone .lab {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--berry);
+      margin-bottom: 0.2rem;
+    }
+
+    .after-tone p {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--ink);
+    }
+
+    .move-box {
+      background: var(--cher-yellow);
+      border: 1.5px solid var(--ink);
+      padding: 0.75rem 0.8rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+
+    .move-box .lab {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: var(--ink);
+    }
+
+    .share-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.9rem;
+    }
+
+    .share-actions .btn { flex: 1 1 auto; text-align: center; }
+
+    .details {
+      margin-top: 1rem;
+      display: none;
+    }
+
+    .details.on { display: block; }
+
+    .section-label {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      margin: 0.9rem 0 0.55rem;
+      border-bottom: 1.5px solid var(--ink);
+      padding-bottom: 0.25rem;
+      color: var(--ink);
+    }
+
+    .insight {
+      border-left: 4px solid var(--pink);
+      background: var(--lilac);
+      padding: 0.7rem 0.8rem;
+      font-size: 0.92rem;
+      margin-bottom: 0.75rem;
+      color: var(--ink);
+    }
+
+    .route { list-style: none; display: grid; gap: 0.55rem; }
+
+    .route li {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.45rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px dotted var(--soft-gray);
+    }
+
+    .route .n {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--berry);
+    }
+
+    .route strong { display: block; margin-bottom: 0.1rem; }
+    .route span { color: #5c5358; font-size: 0.9rem; }
+
+    .brands { display: grid; gap: 0.45rem; }
+
+    .brand {
+      border: 1.5px solid var(--ink);
+      padding: 0.65rem 0.75rem;
+      display: grid;
+      grid-template-columns: 7.2rem 1fr;
+      gap: 0.4rem;
+      background: var(--screen-blue);
+    }
+
+    @media (max-width: 520px) {
+      .brand { grid-template-columns: 1fr; }
+    }
+
+    .brand .name {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--berry);
+    }
+
+    .brand .copy { font-size: 0.92rem; font-weight: 500; }
+
+    .fine {
+      margin-top: 0.85rem;
+      font-size: 0.78rem;
+      color: #5c5358;
+    }
+
+    .foot {
+      text-align: center;
+      margin-top: 0.75rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--soft-gray);
+    }
+  </style>
 </head>
 <body>
+  <div class="page">
+    <div class="window">
+      <div class="chrome">
+        <span class="dot a"></span>
+        <span class="dot b"></span>
+        <span class="dot c"></span>
+        <div class="url">it-girl.hair / lab</div>
+      </div>
 
-    <header>
-        <h1>💞 It-Girl Pro Hair Lab 💞</h1>
-        <p class="subtitle">Salon-Grade Aesthetic Formulas (Milbon, Wella, L'Oreal) ✨</p>
-    </header>
+      <header class="masthead">
+        <div class="brand-lockup">
+          <h1>IT-GIRL<span>HAIR LAB</span></h1>
+        </div>
+        <p class="hand">you bring the inspo.<br>we figure out the route.</p>
+      </header>
 
-    <div class="magazine-box">
-        <div class="grid-layout">
-            <div class="notebook-card">
-                <h2>1. Scan Base Color</h2>
-                <div class="media-box" id="webcam-container">
-                    <video id="webcam" autoplay playsinline></video>
+      <div class="desk">
+        <p class="privacy">Your photos stay in your browser.<br>Nothing is uploaded.</p>
+
+        <div class="pair">
+          <div>
+            <div class="col-label">Your Hair</div>
+            <article class="shot your">
+              <div class="tape" aria-hidden="true"></div>
+              <div class="frame" id="base-frame">
+                <video id="webcam" autoplay playsinline muted hidden></video>
+                <img id="base-image" alt="Your hair" hidden>
+                <div class="marker-layer" id="base-markers"></div>
+                <div class="placeholder" id="base-ph">upload a clear photo<br>of your hair right now</div>
+              </div>
+              <p class="prompt" id="base-prompt">start with your photo</p>
+              <div class="zone-pills" id="zone-pills" hidden>
+                <span class="zone-pill" data-zone="roots">Roots</span>
+                <span class="zone-pill" data-zone="mids">Mids</span>
+                <span class="zone-pill" data-zone="ends">Ends</span>
+              </div>
+              <div class="controls">
+                <button type="button" class="btn" id="btn-cam">Camera</button>
+                <button type="button" class="btn soft" id="btn-snap" hidden>Capture</button>
+                <button type="button" class="btn" id="btn-base">Upload</button>
+                <button type="button" class="btn ghost" id="btn-reset-zones" hidden>Resample</button>
+                <input type="file" id="base-file" accept="image/*">
+              </div>
+            </article>
+          </div>
+
+          <div class="arrow" aria-hidden="true">→</div>
+
+          <div>
+            <div class="col-label">Hair Inspo</div>
+            <article class="shot inspo">
+              <div class="sticker-note">♡ dream</div>
+              <div class="frame" id="target-frame">
+                <img id="target-image" alt="Inspiration hair" hidden>
+                <div class="marker-layer">
+                  <div class="marker" id="target-marker"><span class="tag">dream</span></div>
                 </div>
-                <button class="btn" onclick="startWebcam()">📸 Open Camera</button>
-            </div>
-
-            <div class="notebook-card">
-                <h2>2. Target Shade</h2>
-                <div class="media-box" style="display: block; padding: 15px; height: 240px; overflow-y: auto; background: #fff9fb;">
-                    <div class="color-select-grid">
-                        <div class="color-option" style="background: #A79277;" title="Muted Greige" onclick="selectColor('Greige', this)"></div>
-                        <div class="color-option" style="background: #7D8ABC;" title="Lavender Ash" onclick="selectColor('Lavender Ash', this)"></div>
-                        <div class="color-option" style="background: #C47B5A;" title="Muted Copper" onclick="selectColor('Copper', this)"></div>
-                        <div class="color-option" style="background: #F1A7B5;" title="Pale Pink" onclick="selectColor('Pale Pink', this)"></div>
-                        <div class="color-option" style="background: #5A524E;" title="Matt Khaki" onclick="selectColor('Matt Khaki', this)"></div>
-                        <div class="color-option" style="background: #4A3E3D;" title="Chocolat Brown" onclick="selectColor('Chocolat', this)"></div>
-                    </div>
-                </div>
-                <button class="btn btn-purple" onclick="generateRecipe()">🧪 Mix Formula</button>
-            </div>
+                <div class="placeholder" id="target-ph">drop the look<br>you actually want</div>
+              </div>
+              <p class="prompt" id="target-prompt">then tap your dream shade</p>
+              <div class="controls">
+                <button type="button" class="btn" id="btn-target">Upload inspo</button>
+                <input type="file" id="target-file" accept="image/*">
+              </div>
+            </article>
+          </div>
         </div>
 
-        <div class="result-section" id="result-box">
-            <div class="recipe-title">✨ Pro Color Mixing Sheet ✨</div>
-            <div class="recipe-details">
-                <div class="recipe-card">
-                    <h4>📦 Salon-Exclusive Brand Formulas</h4>
-                    <div id="dye-product" style="font-size: 0.95rem; color: #b53471;"></div>
-                </div>
-                <div class="recipe-card">
-                    <h4>⏱️ Salon Sectioning & Application Guide</h4>
-                    <ol id="dye-steps" style="padding-left: 20px; font-size: 0.95rem;"></ol>
-                </div>
+        <section class="history" id="history">
+          <h3>Quick history</h3>
+          <div class="q">
+            <p>Are your roots untreated / virgin regrowth?</p>
+            <div class="choices" data-q="rootsVirgin">
+              <button type="button" class="choice" data-v="yes">Yes</button>
+              <button type="button" class="choice" data-v="no">No</button>
+              <button type="button" class="choice" data-v="unsure">Not sure</button>
             </div>
+          </div>
+          <div class="q">
+            <p>Have your mids or ends been colored before?</p>
+            <div class="choices" data-q="lengthsColored">
+              <button type="button" class="choice" data-v="yes">Yes</button>
+              <button type="button" class="choice" data-v="no">No</button>
+              <button type="button" class="choice" data-v="unsure">Not sure</button>
+            </div>
+          </div>
+        </section>
+
+        <div class="cta">
+          <button type="button" class="btn primary" id="btn-go" disabled>Decode my hair</button>
         </div>
+
+        <section id="result" aria-live="polite">
+          <article class="verdict" id="verdict-card">
+            <p class="kicker">Beauty Desk Verdict</p>
+            <h2>Your route</h2>
+            <p class="lede">okay, here's the situation...</p>
+
+            <div class="v-row" style="border-top:none;padding-top:0;margin-bottom:0.75rem;">
+              <div class="lab">The Dream</div>
+              <p id="v-dream-level" style="font-family:var(--serif);font-size:clamp(1.15rem,3.5vw,1.35rem);">—</p>
+              <p class="v-note" id="v-dream-tone">—</p>
+            </div>
+
+            <div class="lab" style="margin-bottom:0.35rem;">Lightening Plan</div>
+            <div class="verdict-grid">
+              <div class="v-row">
+                <div class="lab">Roots</div>
+                <div class="decision" id="d-roots">—</div>
+                <p class="v-note" id="v-roots">—</p>
+              </div>
+              <div class="v-row">
+                <div class="lab">Mids</div>
+                <div class="decision" id="d-mids">—</div>
+                <p class="v-note" id="v-mids">—</p>
+              </div>
+              <div class="v-row">
+                <div class="lab">Ends</div>
+                <div class="decision" id="d-ends">—</div>
+                <p class="v-note" id="v-ends">—</p>
+              </div>
+            </div>
+
+            <div class="after-tone">
+              <div class="lab">After lightening</div>
+              <p id="v-after">—</p>
+            </div>
+
+            <div class="move-box">
+              <div class="lab">The Move</div>
+              <div id="v-move">—</div>
+            </div>
+
+            <div class="share-actions">
+              <button type="button" class="btn soft" id="btn-full">See the full route</button>
+              <button type="button" class="btn" id="btn-share">Share ♡</button>
+            </div>
+          </article>
+
+          <div class="details" id="details">
+            <p class="insight" id="zone-insight" hidden></p>
+
+            <h3 class="section-label">The Route</h3>
+            <ol class="route" id="route-list"></ol>
+
+            <h3 class="section-label">Formula Direction</h3>
+            <div class="brands" id="brands"></div>
+            <p class="fine">
+              Shade numbers are candidate matches based on the reference image.
+              Exact formulation depends on your hair history and condition.
+              Bleach strength, developer %, and processing time are not prescribed from photos alone.
+            </p>
+          </div>
+        </section>
+      </div>
     </div>
+    <p class="foot">It-Girl Hair Lab · stays on your phone</p>
+  </div>
 
-    <script>
-        let selectedTarget = "";
+  <script>
+    /**
+     * Fully client-side. No AI / API / uploads.
+     */
 
-        // 1. Target Color Specifications
-        const targetSpecs = {
-            'Greige': { level: 9, requiresBleach: false },
-            'Lavender Ash': { level: 9, requiresBleach: true },
-            'Copper': { level: 7, requiresBleach: false },
-            'Pale Pink': { level: 10, requiresBleach: true },
-            'Matt Khaki': { level: 8, requiresBleach: false },
-            'Chocolat': { level: 6, requiresBleach: false }
+    const ZONES = ["roots", "mids", "ends"];
+    const SAMPLE_RADIUS = 24;
+
+    const FAMILIES = [
+      "Cool Beige", "Greige", "Pearl Ash", "Taupe Ash", "Matt Khaki",
+      "Warm Beige", "Copper", "Chocolate", "Pale Pink", "Lavender Ash"
+    ];
+
+    // Product codes already known to this app (do not invent outside this set)
+    const recipeDB = {
+      "Cool Beige": {
+        milbon: { code: "Gray Pearl 9 + Sapphire 9", note: "Cool Beige / Pearl-Ash direction" },
+        wella: { code: "Koleston Perfect 8/91", note: "Pearl Ash" },
+        loreal: { code: "Majirel 8.11", note: "Deep Ash Blonde / cool direction" },
+        dream: "Soft Cool Beige",
+        lab: { L: 64, a: 1, b: 10 },
+        levelHint: 8.5
+      },
+      Greige: {
+        milbon: { code: "Gray Pearl 9 + Sapphire 9", note: "Cool greige / pearl-ash direction" },
+        wella: { code: "Koleston Perfect 8/91", note: "Pearl Ash" },
+        loreal: { code: "Majirel 8.11", note: "Deep Ash Blonde / cool direction" },
+        dream: "Soft Cool Greige",
+        lab: { L: 62, a: 2, b: 8 },
+        levelHint: 8.5
+      },
+      "Pearl Ash": {
+        milbon: { code: "Gray Pearl 9 + Sapphire 9", note: "Pearl-Ash direction" },
+        wella: { code: "Koleston Perfect 8/91", note: "Pearl Ash" },
+        loreal: { code: "Majirel 8.11", note: "Deep Ash Blonde" },
+        dream: "Pearl Ash Blonde",
+        lab: { L: 66, a: 0, b: 4 },
+        levelHint: 9
+      },
+      "Taupe Ash": {
+        milbon: { code: "Gray Pearl 9 + Sapphire 9", note: "Closest stored cool taupe / pearl-ash direction" },
+        wella: { code: "Koleston Perfect 8/91", note: "Closest stored: Pearl Ash" },
+        loreal: { code: "Majirel 8.11", note: "Closest stored: Deep Ash Blonde" },
+        dream: "Taupe Ash",
+        lab: { L: 58, a: 2, b: 6 },
+        levelHint: 8
+      },
+      "Matt Khaki": {
+        milbon: { code: "9-mAs Matt Ash / Emerald direction", note: "Matt khaki (needs consistent matte/green cast)" },
+        wella: { code: "Koleston Perfect 8/2", note: "Matt Blonde" },
+        loreal: { code: "Majirel 8.7", note: "Matt Blonde" },
+        dream: "Matt Khaki Blonde",
+        lab: { L: 52, a: -6, b: 12 },
+        levelHint: 8
+      },
+      "Warm Beige": {
+        milbon: { code: "7-nBG Noble Beige + 7-sMA Sepia Pearl", note: "Closest stored warm beige / sepia direction" },
+        wella: { code: "Koleston Perfect 6/77", note: "Closest stored warm brown / beige direction" },
+        loreal: { code: "Majirel 5.35", note: "Closest stored warm chocolate / beige direction" },
+        dream: "Warm Beige",
+        lab: { L: 50, a: 10, b: 18 },
+        levelHint: 7
+      },
+      Copper: {
+        milbon: { code: "9-nCh Chocolat + 9-crKG Coral Khaki", note: "Muted copper direction" },
+        wella: { code: "Koleston Perfect 7/43 + 8/34", note: "Copper / Gold-Copper" },
+        loreal: { code: "Majirel 7.4", note: "Copper Blonde" },
+        dream: "Warm Muted Copper",
+        lab: { L: 52, a: 28, b: 32 },
+        levelHint: 7
+      },
+      Chocolate: {
+        milbon: { code: "7-nBG Noble Beige + 7-sMA Sepia Pearl", note: "Chocolate / sepia direction" },
+        wella: { code: "Koleston Perfect 6/77", note: "Deep Brown" },
+        loreal: { code: "Majirel 5.35", note: "Warm Chocolate Brown" },
+        dream: "Rich Chocolate Brown",
+        lab: { L: 28, a: 10, b: 12 },
+        levelHint: 5.5
+      },
+      "Pale Pink": {
+        milbon: { code: "Addicthy Pale Pink / Clear + Pink", note: "Pastel pink direction" },
+        wella: { code: "Color Touch 10/65 or Instamatic Pink Pop", note: "Soft rose / pastel pink" },
+        loreal: { code: "MAJIFASHION Pastel Pink", note: "Pastel pink family" },
+        dream: "Soft Pale Pink",
+        lab: { L: 72, a: 22, b: 6 },
+        levelHint: 10
+      },
+      "Lavender Ash": {
+        milbon: { code: "Lavender Pearl 9 + Amethyst 9", note: "Lavender-ash direction" },
+        wella: { code: "Koleston Perfect 9/16 + 8/96", note: "Pearl-Ash / Violet-Ash" },
+        loreal: { code: "Majirel 9.21", note: "Iridescent Ash Blonde" },
+        dream: "Cool Lavender Ash",
+        lab: { L: 58, a: 8, b: -8 },
+        levelHint: 9
+      }
+    };
+
+    const state = {
+      baseMode: null,
+      activeZone: null,
+      zones: { roots: null, mids: null, ends: null },
+      target: null,
+      history: { rootsVirgin: null, lengthsColored: null }
+    };
+
+    const $ = (id) => document.getElementById(id);
+    const els = {
+      webcam: $("webcam"),
+      baseFrame: $("base-frame"),
+      baseImage: $("base-image"),
+      basePh: $("base-ph"),
+      basePrompt: $("base-prompt"),
+      baseMarkers: $("base-markers"),
+      zonePills: $("zone-pills"),
+      targetFrame: $("target-frame"),
+      targetImage: $("target-image"),
+      targetPh: $("target-ph"),
+      targetPrompt: $("target-prompt"),
+      targetMarker: $("target-marker"),
+      history: $("history"),
+      btnCam: $("btn-cam"),
+      btnSnap: $("btn-snap"),
+      btnBase: $("btn-base"),
+      btnResetZones: $("btn-reset-zones"),
+      baseFile: $("base-file"),
+      btnTarget: $("btn-target"),
+      targetFile: $("target-file"),
+      btnGo: $("btn-go"),
+      result: $("result"),
+      details: $("details"),
+      btnFull: $("btn-full"),
+      btnShare: $("btn-share")
+    };
+
+    // ---------- Color helpers ----------
+    function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
+
+    function srgbToLinear(c) {
+      c /= 255;
+      return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+    }
+
+    function rgbToLab(r, g, b) {
+      const R = srgbToLinear(r);
+      const G = srgbToLinear(g);
+      const B = srgbToLinear(b);
+      let x = (R * 0.4124564 + G * 0.3575761 + B * 0.1804375) * 100;
+      let y = (R * 0.2126729 + G * 0.7151522 + B * 0.0721750) * 100;
+      let z = (R * 0.0193339 + G * 0.1191920 + B * 0.9503041) * 100;
+      x /= 95.047; y /= 100; z /= 108.883;
+      const e = 216 / 24389;
+      const k = 24389 / 27;
+      const fx = x > e ? Math.cbrt(x) : (k * x + 16) / 116;
+      const fy = y > e ? Math.cbrt(y) : (k * y + 16) / 116;
+      const fz = z > e ? Math.cbrt(z) : (k * z + 16) / 116;
+      return { L: 116 * fy - 16, a: 500 * (fx - fy), b: 200 * (fy - fz) };
+    }
+
+    function deltaE(a, b) {
+      return Math.sqrt((a.L - b.L) ** 2 + (a.a - b.a) ** 2 + (a.b - b.b) ** 2);
+    }
+
+    function median(arr) {
+      if (!arr.length) return null;
+      const s = [...arr].sort((a, b) => a - b);
+      return s[Math.floor(s.length / 2)];
+    }
+
+    function isProbableSkinOrScalp(r, g, b, lab) {
+      // Reject bright pink/peach skin-like pixels near selection
+      const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+      if (lum > 170 && lab.a > 8 && lab.b > 8 && lab.a < 35) return true;
+      if (lab.L > 72 && lab.a > 6 && lab.b > 4 && Math.abs(lab.a - lab.b) < 18) return true;
+      return false;
+    }
+
+    function collectPatchPixels(ctx, cx, cy, radius, width, height) {
+      const x = Math.max(0, cx - radius);
+      const y = Math.max(0, cy - radius);
+      const w = Math.min(radius * 2, width - x);
+      const h = Math.min(radius * 2, height - y);
+      const data = ctx.getImageData(x, y, w, h).data;
+      const keep = [];
+      for (let i = 0; i < data.length; i += 4) {
+        const r = data[i], g = data[i + 1], b = data[i + 2];
+        const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+        if (lum < 18 || lum > 238) continue; // extreme highlight / shadow
+        const lab = rgbToLab(r, g, b);
+        if (isProbableSkinOrScalp(r, g, b, lab)) continue;
+        keep.push({ r, g, b, lab, lum });
+      }
+      return keep;
+    }
+
+    /**
+     * Multi-patch robust sample around a click.
+     * Returns unreliable:true when not enough clean hair pixels.
+     */
+    function samplePoint(img, xRatio, yRatio) {
+      const width = img.naturalWidth || img.videoWidth;
+      const height = img.naturalHeight || img.videoHeight;
+      if (!width || !height) return { unreliable: true };
+
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext("2d", { willReadFrequently: true });
+      ctx.drawImage(img, 0, 0, width, height);
+
+      const cx = Math.round(xRatio * width);
+      const cy = Math.round(yRatio * height);
+      const offsets = [
+        [0, 0], [10, 0], [-10, 0], [0, 10], [0, -10],
+        [8, 8], [-8, 8], [8, -8], [-8, -8]
+      ];
+
+      let pool = [];
+      for (const [ox, oy] of offsets) {
+        pool = pool.concat(
+          collectPatchPixels(ctx, clamp(cx + ox, 0, width - 1), clamp(cy + oy, 0, height - 1), 12, width, height)
+        );
+      }
+
+      if (pool.length < 40) {
+        return { unreliable: true, xRatio, yRatio };
+      }
+
+      const r = median(pool.map((p) => p.r));
+      const g = median(pool.map((p) => p.g));
+      const b = median(pool.map((p) => p.b));
+      const lab = rgbToLab(r, g, b);
+
+      // Spread check — if remaining pixels wildly inconsistent, ask to resample
+      const Ls = pool.map((p) => p.lab.L).sort((a, c) => a - c);
+      const spread = Ls[Math.floor(Ls.length * 0.9)] - Ls[Math.floor(Ls.length * 0.1)];
+      if (spread > 28) {
+        return { unreliable: true, xRatio, yRatio };
+      }
+
+      return {
+        unreliable: false,
+        xRatio,
+        yRatio,
+        rgb: { r, g, b },
+        lab
+      };
+    }
+
+    function levelFromL(L) {
+      if (L < 14) return 2;
+      if (L < 20) return 3;
+      if (L < 28) return 4;
+      if (L < 36) return 5;
+      if (L < 45) return 6;
+      if (L < 54) return 7;
+      if (L < 63) return 8;
+      if (L < 72) return 9;
+      return 10;
+    }
+
+    function estimateTargetLevel(lab) {
+      const lvl = levelFromL(lab.L);
+      // Prefer a range when near a boundary
+      const boundaries = [14, 20, 28, 36, 45, 54, 63, 72];
+      const near = boundaries.some((b) => Math.abs(lab.L - b) < 3.5);
+      if (near && lvl < 10) {
+        return { label: `Estimated Level ${lvl}–${lvl + 1}`, low: lvl, high: lvl + 1 };
+      }
+      if (near && lvl === 10) {
+        return { label: "Estimated Level 9–10", low: 9, high: 10 };
+      }
+      return { label: `Estimated Level ${lvl}`, low: lvl, high: lvl };
+    }
+
+    function classifyToneFamily(lab) {
+      const { L, a, b } = lab;
+      const chroma = Math.sqrt(a * a + b * b);
+
+      // Strong hue families first
+      if (L > 62 && a > 14 && b > -2 && b < 18 && chroma > 16) return "Pale Pink";
+      if (a > 18 && b > 18 && L > 38 && L < 68) return "Copper";
+      if (b < -5 && a > 3 && L > 45 && chroma > 10) return "Lavender Ash";
+      if (L < 38 && chroma < 22) return "Chocolate";
+
+      // Matt Khaki: requires consistent matte/green cast — not a few greenish pixels
+      const mattGreen = a < -3.5 && b > 6 && b < 22 && chroma > 8 && L > 40 && L < 62;
+      if (mattGreen) return "Matt Khaki";
+
+      // Muted gray-beige blondes → cool beige / greige / pearl / taupe
+      if (chroma < 14 && L >= 55) {
+        if (L >= 64 && b < 8) return "Pearl Ash";
+        if (L >= 58 && b >= 8) return "Cool Beige";
+        if (L < 58) return "Taupe Ash";
+        return "Greige";
+      }
+
+      if (b > 14 && a > 4 && L >= 42 && L < 60) return "Warm Beige";
+      if (chroma < 16 && L >= 48 && L < 64) return "Greige";
+
+      // Fallback nearest centroid among cool muted families preferentially
+      let best = "Cool Beige";
+      let bestDist = Infinity;
+      for (const name of ["Cool Beige", "Greige", "Pearl Ash", "Taupe Ash", "Warm Beige", "Chocolate", "Copper", "Pale Pink", "Lavender Ash", "Matt Khaki"]) {
+        // Discourage Matt Khaki unless green cast is present
+        if (name === "Matt Khaki" && !(a < -3)) continue;
+        const d = deltaE(lab, recipeDB[name].lab);
+        if (d < bestDist) { bestDist = d; best = name; }
+      }
+      return best;
+    }
+
+    /**
+     * Rank zones relatively inside the SAME current-hair image.
+     * History has higher priority than uncertain pixel gaps.
+     */
+    function planLiftByRelativeZones(zones, history, targetLevelHigh) {
+      const entries = ZONES.map((name) => ({
+        name,
+        sample: zones[name],
+        L: zones[name]?.unreliable ? null : zones[name]?.lab?.L
+      }));
+
+      const reliable = entries.filter((e) => e.L != null);
+      if (reliable.length < 2) {
+        return null;
+      }
+
+      const sortedAsc = [...reliable].sort((a, b) => a.L - b.L); // darkest first
+      const darkest = sortedAsc[0].name;
+      const lightest = sortedAsc[sortedAsc.length - 1].name;
+      const ranks = {};
+      sortedAsc.forEach((e, i) => { ranks[e.name] = i; }); // 0 = darkest
+
+      const span = sortedAsc[sortedAsc.length - 1].L - sortedAsc[0].L;
+      const targetIsLight = targetLevelHigh >= 8;
+
+      const out = {};
+      for (const name of ZONES) {
+        const sample = zones[name];
+        if (!sample || sample.unreliable) {
+          out[name] = {
+            decision: "RESAMPLE THIS ZONE",
+            decisionClass: "possible",
+            note: "This sample looks unreliable (highlight, scalp, or mixed pixels). Tap again on clear hair."
+          };
+          continue;
+        }
+
+        const rank = ranks[name];
+        const isDarkest = name === darkest;
+        const isLightest = name === lightest;
+
+        // History boost
+        const rootsVirgin = history.rootsVirgin === "yes";
+        const lengthsColored = history.lengthsColored === "yes";
+
+        let decision;
+        let decisionClass;
+        let note;
+
+        if (name === "roots" && rootsVirgin && isDarkest && targetIsLight) {
+          decision = "LIKELY NEED THE MOST LIFT";
+          decisionClass = "likely";
+          note = "Untreated regrowth is the darkest zone — highest lift priority for a lighter dream.";
+        } else if (isDarkest && targetIsLight && span >= 6) {
+          decision = "LIKELY NEED THE MOST LIFT";
+          decisionClass = "likely";
+          note = "This is the darkest zone in your photo versus your lighter inspo.";
+        } else if (isLightest && (lengthsColored || name === "ends") && targetIsLight) {
+          decision = "PROTECT / MINIMAL ADDITIONAL LIFT";
+          decisionClass = "avoid";
+          note = name === "ends"
+            ? "Your ends are the lightest zone — already closer to the dream brightness."
+            : "This zone is already the lightest — protect it from extra lift.";
+        } else if (rank === 1 || (!isDarkest && !isLightest)) {
+          decision = "SOME LIFT MAY BE NEEDED";
+          decisionClass = "possible";
+          note = lengthsColored && name !== "roots"
+            ? "Previously colored mid-lengths — some lift may still be needed toward the dream."
+            : "Middle brightness zone — some lift may be needed.";
+        } else if (isDarkest) {
+          decision = "LIKELY NEED THE MOST LIFT";
+          decisionClass = "likely";
+          note = "Darkest sampled zone — prioritize lift here if the dream is lighter.";
+        } else if (isLightest) {
+          decision = "PROTECT / MINIMAL ADDITIONAL LIFT";
+          decisionClass = "avoid";
+          note = "Lightest sampled zone — avoid unnecessary extra lightening.";
+        } else {
+          decision = "SOME LIFT MAY BE NEEDED";
+          decisionClass = "possible";
+          note = "Moderate gap versus the dream — lift carefully if needed.";
+        }
+
+        // If target is not substantially lighter (deep brown dream), tone down lift language
+        if (targetLevelHigh <= 6 && decisionClass === "likely") {
+          decision = "SOME LIFT MAY BE NEEDED";
+          decisionClass = "possible";
+          note = "Dream depth is deeper — heavy bleach is less likely the headline.";
+        }
+
+        out[name] = { decision, decisionClass, note, rank, isDarkest, isLightest };
+      }
+
+      return { out, darkest, lightest, span };
+    }
+
+    // ---------- UI helpers (unchanged flow) ----------
+    function stopCam() {
+      const s = els.webcam.srcObject;
+      if (s) {
+        s.getTracks().forEach((t) => t.stop());
+        els.webcam.srcObject = null;
+      }
+    }
+
+    function showBaseImage() {
+      els.webcam.hidden = true;
+      els.baseImage.hidden = false;
+      els.basePh.hidden = true;
+    }
+
+    function showBaseVideo() {
+      els.baseImage.hidden = true;
+      els.webcam.hidden = false;
+      els.basePh.hidden = true;
+    }
+
+    function loadFile(file, img) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          img.onload = () => resolve(img);
+          img.onerror = reject;
+          img.src = reader.result;
         };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
 
-        async function startWebcam() {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } });
-                document.getElementById('webcam').srcObject = stream;
-            } catch (err) {
-                alert("카메라 접근이 차단되었습니다! 브라우저 권한을 확인해주세요. 📸");
-            }
+    function zoneLabel(z) {
+      return { roots: "ROOTS", mids: "MIDS", ends: "ENDS" }[z];
+    }
+
+    function updatePills() {
+      document.querySelectorAll(".zone-pill").forEach((pill) => {
+        const z = pill.dataset.zone;
+        const done = Boolean(state.zones[z]) && !state.zones[z].unreliable;
+        pill.classList.toggle("done", done);
+        pill.classList.toggle("active", state.activeZone === z);
+        pill.textContent = done ? `${zoneLabel(z)} ✓` : zoneLabel(z);
+      });
+    }
+
+    function renderBaseMarkers() {
+      els.baseMarkers.innerHTML = "";
+      for (const z of ZONES) {
+        const sample = state.zones[z];
+        if (!sample) continue;
+        const el = document.createElement("div");
+        el.className = `marker ${z}`;
+        el.style.display = "block";
+        el.style.left = `${sample.xRatio * 100}%`;
+        el.style.top = `${sample.yRatio * 100}%`;
+        el.innerHTML = `<span class="tag">${z}</span>`;
+        els.baseMarkers.appendChild(el);
+      }
+    }
+
+    function nextMissingZone() {
+      return ZONES.find((z) => !state.zones[z] || state.zones[z].unreliable) || null;
+    }
+
+    function beginZoneSampling() {
+      els.zonePills.hidden = false;
+      els.btnResetZones.hidden = false;
+      els.history.classList.add("on");
+      state.activeZone = nextMissingZone();
+      updatePills();
+      if (state.activeZone) {
+        els.baseFrame.classList.add("sampling");
+        els.basePrompt.innerHTML = `TAP YOUR <em>${zoneLabel(state.activeZone)}</em>`;
+      } else {
+        els.baseFrame.classList.remove("sampling");
+        els.basePrompt.textContent = "ROOTS ✓  MIDS ✓  ENDS ✓";
+      }
+      refreshReady();
+    }
+
+    function resetZones() {
+      state.zones = { roots: null, mids: null, ends: null };
+      state.activeZone = "roots";
+      renderBaseMarkers();
+      beginZoneSampling();
+      els.result.style.display = "none";
+      els.details.classList.remove("on");
+    }
+
+    function refreshReady() {
+      const zonesReady = ZONES.every((z) => state.zones[z] && !state.zones[z].unreliable);
+      const histReady = state.history.rootsVirgin && state.history.lengthsColored;
+      els.btnGo.disabled = !(zonesReady && histReady && state.target && !state.target.unreliable);
+    }
+
+    // ---------- Events ----------
+    els.btnCam.addEventListener("click", async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } });
+        stopCam();
+        els.webcam.srcObject = stream;
+        state.baseMode = "webcam";
+        showBaseVideo();
+        els.btnSnap.hidden = false;
+        els.basePrompt.textContent = "capture, then tap roots → mids → ends";
+      } catch (_) {
+        alert("Camera blocked — try uploading instead.");
+      }
+    });
+
+    els.btnSnap.addEventListener("click", async () => {
+      if (!els.webcam.srcObject || !els.webcam.videoWidth) return;
+      const c = document.createElement("canvas");
+      c.width = els.webcam.videoWidth;
+      c.height = els.webcam.videoHeight;
+      c.getContext("2d").drawImage(els.webcam, 0, 0);
+      stopCam();
+      els.btnSnap.hidden = true;
+      els.baseImage.src = c.toDataURL("image/jpeg", 0.92);
+      await new Promise((r) => (els.baseImage.complete ? r() : (els.baseImage.onload = () => r())));
+      showBaseImage();
+      resetZones();
+    });
+
+    els.btnBase.addEventListener("click", () => els.baseFile.click());
+    els.baseFile.addEventListener("change", async (e) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+      stopCam();
+      els.btnSnap.hidden = true;
+      await loadFile(file, els.baseImage);
+      showBaseImage();
+      resetZones();
+    });
+
+    els.btnResetZones.addEventListener("click", resetZones);
+
+    els.baseFrame.addEventListener("click", (e) => {
+      if (!state.activeZone || els.baseImage.hidden || !els.baseImage.naturalWidth) return;
+      const rect = els.baseFrame.getBoundingClientRect();
+      const xRatio = clamp((e.clientX - rect.left) / rect.width, 0, 1);
+      const yRatio = clamp((e.clientY - rect.top) / rect.height, 0, 1);
+      const sample = samplePoint(els.baseImage, xRatio, yRatio);
+      state.zones[state.activeZone] = sample;
+      renderBaseMarkers();
+      if (sample.unreliable) {
+        els.basePrompt.innerHTML = `<em>RESAMPLE ${zoneLabel(state.activeZone)}</em> — tap clear hair, not scalp/shine`;
+        updatePills();
+        refreshReady();
+        return;
+      }
+      state.activeZone = nextMissingZone();
+      updatePills();
+      if (state.activeZone) {
+        els.basePrompt.innerHTML = `TAP YOUR <em>${zoneLabel(state.activeZone)}</em>`;
+      } else {
+        els.baseFrame.classList.remove("sampling");
+        els.basePrompt.textContent = "ROOTS ✓  MIDS ✓  ENDS ✓";
+      }
+      refreshReady();
+    });
+
+    els.btnTarget.addEventListener("click", () => els.targetFile.click());
+    els.targetFile.addEventListener("change", async (e) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+      await loadFile(file, els.targetImage);
+      els.targetImage.hidden = false;
+      els.targetPh.hidden = true;
+      els.targetFrame.classList.add("sampling");
+      state.target = null;
+      els.targetMarker.style.display = "none";
+      els.targetPrompt.innerHTML = "TAP YOUR <em>DREAM</em> SHADE";
+      refreshReady();
+    });
+
+    els.targetFrame.addEventListener("click", (e) => {
+      if (els.targetImage.hidden || !els.targetImage.naturalWidth) return;
+      const rect = els.targetFrame.getBoundingClientRect();
+      const xRatio = clamp((e.clientX - rect.left) / rect.width, 0, 1);
+      const yRatio = clamp((e.clientY - rect.top) / rect.height, 0, 1);
+      const sample = samplePoint(els.targetImage, xRatio, yRatio);
+      if (sample.unreliable) {
+        els.targetPrompt.innerHTML = "<em>RESAMPLE</em> — tap a clear hair area on the inspo";
+        state.target = null;
+        refreshReady();
+        return;
+      }
+      state.target = sample;
+      els.targetMarker.className = "marker dream";
+      els.targetMarker.style.display = "block";
+      els.targetMarker.style.left = `${xRatio * 100}%`;
+      els.targetMarker.style.top = `${yRatio * 100}%`;
+      els.targetFrame.classList.remove("sampling");
+      els.targetPrompt.textContent = "dream shade locked ♡";
+      refreshReady();
+    });
+
+    document.querySelectorAll(".choices").forEach((group) => {
+      group.addEventListener("click", (e) => {
+        const btn = e.target.closest(".choice");
+        if (!btn) return;
+        group.querySelectorAll(".choice").forEach((c) => c.classList.remove("selected"));
+        btn.classList.add("selected");
+        state.history[group.dataset.q] = btn.dataset.v;
+        refreshReady();
+      });
+    });
+
+    els.btnGo.addEventListener("click", () => decodeHair());
+    els.btnFull.addEventListener("click", () => {
+      els.details.classList.add("on");
+      els.details.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    els.btnShare.addEventListener("click", async () => {
+      const payload = {
+        title: "It-Girl Hair Lab",
+        text: "I just decoded the route from my hair to my inspo ♡",
+        url: window.location.href
+      };
+      try {
+        if (navigator.share) {
+          await navigator.share(payload);
+          return;
         }
+      } catch (_) {}
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        const prev = els.btnShare.textContent;
+        els.btnShare.textContent = "LINK COPIED ♡";
+        setTimeout(() => { els.btnShare.textContent = prev; }, 1800);
+      } catch (_) {
+        alert("Copy this link:\\n" + window.location.href);
+      }
+    });
 
-        function selectColor(colorName, element) {
-            selectedTarget = colorName;
-            document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('selected'));
-            element.classList.add('selected');
+    function decodeHair() {
+      if (els.btnGo.disabled) return;
+
+      const target = state.target;
+      const family = classifyToneFamily(target.lab);
+      const recipe = recipeDB[family];
+      const levelEst = estimateTargetLevel(target.lab);
+      const plan = planLiftByRelativeZones(state.zones, state.history, levelEst.high);
+
+      $("v-dream-level").textContent = levelEst.label;
+      $("v-dream-tone").textContent = recipe.dream + " / " + family;
+
+      if (!plan) {
+        ZONES.forEach((z) => {
+          $(`d-${z}`).textContent = "RESAMPLE THIS ZONE";
+          $(`d-${z}`).className = "decision possible";
+          $(`v-${z}`).textContent = "Need clearer taps on roots, mids, and ends.";
+        });
+        $("v-after").textContent = `Tone toward ${family}.`;
+        $("v-move").textContent = "Resample the current-hair zones, then decode again.";
+        els.result.style.display = "block";
+        return;
+      }
+
+      for (const z of ZONES) {
+        const c = plan.out[z];
+        $(`d-${z}`).textContent = c.decision;
+        $(`d-${z}`).className = `decision ${c.decisionClass}`;
+        $(`v-${z}`).textContent = c.note;
+      }
+
+      $("v-after").textContent = `Tone toward a ${family.toLowerCase()} direction.`;
+
+      const most = ZONES.filter((z) => plan.out[z].decisionClass === "likely");
+      const some = ZONES.filter((z) => plan.out[z].decisionClass === "possible");
+      const protect = ZONES.filter((z) => plan.out[z].decisionClass === "avoid");
+
+      const moveBits = [];
+      if (most.length) moveBits.push(`Most lift: ${most.join(", ")}.`);
+      if (some.length) moveBits.push(`Some lift may be needed: ${some.join(", ")}.`);
+      if (protect.length) moveBits.push(`Protect / minimal lift: ${protect.join(", ")}.`);
+      if (most.length || some.length) moveBits.push("Pre-lightening is likely where marked above.");
+      else moveBits.push("Extra lightening is less likely — focus on tone.");
+      moveBits.push(`Then tone toward ${family}.`);
+      $("v-move").textContent = moveBits.join(" ");
+
+      const multi = plan.out.roots.decisionClass !== plan.out.ends.decisionClass ||
+        (state.history.rootsVirgin === "yes" && state.history.lengthsColored === "yes");
+      const insight = $("zone-insight");
+      if (multi) {
+        insight.hidden = false;
+        insight.textContent =
+          "Your roots and lengths are starting from different places, so one formula across the whole head may not give an even result.";
+      } else {
+        insight.hidden = true;
+      }
+
+      const route = [
+        {
+          t: "Know the dream level",
+          b: `${levelEst.label} · ${recipe.dream} / ${family}.`
+        },
+        {
+          t: "Lift by relative zone priority",
+          b: `Within your photo: darkest ≈ ${plan.darkest}, lightest ≈ ${plan.lightest}. History + relative darkness drive the plan — not raw photo exposure.`
+        },
+        {
+          t: "Pre-lighten only where needed",
+          b: most.length || some.length
+            ? `Priority lift on ${[...most, ...some].join(" + ")}. Protect ${protect.join(" / ") || "already-light ends"}.`
+            : "No zone strongly demands heavy lift toward this dream depth."
+        },
+        {
+          t: "Tone afterward",
+          b: `After lightening, tone toward ${family} using the shade candidates below.`
         }
+      ];
 
-        // 💡 [NEW] 실제 웹캠 화면에서 중앙부 픽셀 색상을 추출하여 분석하는 기능
-        function analyzeBaseHairFromVideo() {
-            const video = document.getElementById('webcam');
-            
-            // 카메라가 꺼져있을 경우 기본값 반환
-            if (!video.srcObject) {
-                return { level: 5, undertone: "Red-Orange", hex: "#4A2E2B" }; 
-            }
+      $("route-list").innerHTML = route
+        .map(
+          (step, i) => `
+          <li>
+            <div class="n">${String(i + 1).padStart(2, "0")}</div>
+            <div><strong>${step.t}</strong><span>${step.b}</span></div>
+          </li>`
+        )
+        .join("");
 
-            // 비디오 화면을 캡처할 숨겨진 캔버스 생성
-            const canvas = document.createElement('canvas');
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      $("brands").innerHTML = `
+        <div class="brand">
+          <div class="name">Milbon</div>
+          <div class="copy"><strong>${recipe.milbon.code}</strong><br>${recipe.milbon.note}</div>
+        </div>
+        <div class="brand">
+          <div class="name">Wella</div>
+          <div class="copy"><strong>${recipe.wella.code}</strong><br>${recipe.wella.note}</div>
+        </div>
+        <div class="brand">
+          <div class="name">L'Oréal Professionnel</div>
+          <div class="copy"><strong>${recipe.loreal.code}</strong><br>${recipe.loreal.note}</div>
+        </div>`;
 
-            // 화면 중앙의 100x100 픽셀 영역 추출 (이마/정수리 부근을 맞추기 위함)
-            const size = 100;
-            const startX = (canvas.width - size) / 2;
-            const startY = (canvas.height - size) / 2;
-            
-            let imageData;
-            try {
-                imageData = ctx.getImageData(startX, startY, size, size).data;
-            } catch (e) {
-                return { level: 5, undertone: "Red-Orange", hex: "#000" };
-            }
+      els.details.classList.remove("on");
+      els.result.style.display = "block";
+      $("verdict-card").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
 
-            // 평균 RGB 값 계산
-            let r = 0, g = 0, b = 0;
-            const pixelCount = (imageData.length / 4);
-            for(let i = 0; i < imageData.length; i += 4) {
-                r += imageData[i];
-                g += imageData[i+1];
-                b += imageData[i+2];
-            }
-            r = Math.round(r / pixelCount);
-            g = Math.round(g / pixelCount);
-            b = Math.round(b / pixelCount);
-
-            // RGB를 이용해 체감 밝기(Luminance) 도출
-            const luminance = (0.299 * r + 0.587 * g + 0.114 * b);
-            
-            // 밝기에 따른 모발 레벨 판별 (명도 기준)
-            let level, undertone;
-            if (luminance < 40) { level = 4; undertone = "Red"; }
-            else if (luminance < 65) { level = 5; undertone = "Red-Orange"; }
-            else if (luminance < 90) { level = 6; undertone = "Orange"; }
-            else if (luminance < 120) { level = 7; undertone = "Orange-Yellow"; }
-            else if (luminance < 155) { level = 8; undertone = "Yellow"; }
-            else if (luminance < 190) { level = 9; undertone = "Pale Yellow"; }
-            else { level = 10; undertone = "Palest Yellow"; }
-
-            // 추출한 색상을 HEX로 변환 (UI 표시용)
-            const hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-
-            return { level, undertone, hex };
-        }
-
-        function generateRecipe() {
-            if (!selectedTarget) {
-                alert("Pick your dream aesthetic shade first! 💖");
-                return;
-            }
-
-            const video = document.getElementById('webcam');
-            if (!video.srcObject) {
-                alert("정확한 분석을 위해 📸 Open Camera 버튼을 먼저 눌러주세요!");
-                return;
-            }
-
-            const productEl = document.getElementById('dye-product');
-            const stepsEl = document.getElementById('dye-steps');
-            const resultBox = document.getElementById('result-box');
-            
-            // 2. Run ACTUAL Hair Diagnosis
-            const baseHair = analyzeBaseHairFromVideo();
-            const targetInfo = targetSpecs[selectedTarget];
-            const levelDiff = targetInfo.level - baseHair.level;
-
-            // 3. Dynamic Developer Calculation
-            let developerStr = "6%"; 
-            let actionType = "Standard Lift";
-
-            if (levelDiff <= 0) {
-                developerStr = "3%";
-                actionType = "Tone-Down / Same Level Deposit";
-            } else if (levelDiff <= 2) {
-                developerStr = "6%";
-                actionType = "1-2 Level Lift";
-            } else {
-                developerStr = "9%";
-                actionType = "High Lift";
-            }
-
-            const recipeDB = {
-                'Greige': {
-                    brandFormulas: `<b>• MILBON:</b> Ordeve Addicthy [Gray Pearl 9] + [Sapphire 9] (Ratio 3:1) + ${developerStr} Developer<br><br> <b>• WELLA:</b> Koleston Perfect 8/91 (Pearl Ash) + ${developerStr} Vol<br><br> <b>• L'OREAL:</b> Majirel 8.11 (Deep Ash Blonde)`,
-                    steps: [
-                        `Diagnosis: Base Level ${baseHair.level} (${baseHair.undertone} undertone). Action: ${actionType}.`,
-                        "Perfect for neutralized orange-yellow bases.",
-                        "Apply to the regrowth area (roots) first if there's any black hair.",
-                        "Drag down the mixture to the lengths and ends for the last 15 minutes.",
-                        "Total processing time: 30 minutes. Rinse with a low-pH color lock shampoo."
-                    ]
-                },
-                'Lavender Ash': {
-                    brandFormulas: `<b>• MILBON:</b> Ordeve Addicthy [Lavender Pearl 9] + [Amethyst 9] (Ratio 1:1) + ${developerStr} Developer<br><br> <b>• WELLA:</b> Koleston Perfect 9/16 + 8/96 (Ratio 2:1)<br><br> <b>• L'OREAL:</b> Majirel 9.21 (Iridescent Ash Blonde)`,
-                    steps: [
-                        `Diagnosis: Base Level ${baseHair.level} (${baseHair.undertone} undertone). Action: ${actionType}.`,
-                        "Requires a clear blonde base (Level 9-10) to avoid turning muddy brown.",
-                        "Apply rapidly from the nape of the neck up to the crown to maintain uniform tone.",
-                        "Leave on for exactly 25 minutes. Do not overheat.",
-                        "Rinse with cool water to keep the fragile purple pigments locked in."
-                    ]
-                },
-                'Copper': {
-                    brandFormulas: `<b>• MILBON:</b> Ordeve [9-nCh Chocolat] + [9-crKG Coral Khaki] (Ratio 2:1) + ${developerStr} Developer<br><br> <b>• WELLA:</b> Koleston Perfect 7/43 + 8/34 (Ratio 1:1)<br><br> <b>• L'OREAL:</b> Majirel 7.4 (Copper Blonde)`,
-                    steps: [
-                        `Diagnosis: Base Level ${baseHair.level} (${baseHair.undertone} undertone). Action: ${actionType}.`,
-                        "Can be done on a natural virgin hair base.",
-                        "Apply 2cm away from the scalp first to avoid 'hot roots' caused by body heat.",
-                        "Apply to the roots during the last 12 minutes of processing.",
-                        "Total time: 35 minutes. Emulsify well with water before rinsing."
-                    ]
-                },
-                'Pale Pink': {
-                    brandFormulas: `<b>• MILBON:</b> Ordeve Addicthy [Pale Pink] or [Clear] + [Pink] (Ratio 5:1) + 1.5% - 3% Developer<br><br> <b>• WELLA:</b> Color Touch 10/65 or Instamatic Pink Pop<br><br> <b>• L'OREAL:</b> MAJIFASHION Pastel Pink`,
-                    steps: [
-                        `Diagnosis: Base Level ${baseHair.level} (${baseHair.undertone} undertone). Action: Pre-lightening required.`,
-                        "Apply on towel-dried, damp hair for the smoothest pastel saturation.",
-                        "Saturate thoroughly and massage the hair strands gently.",
-                        "Process for 15-20 minutes. Wash with acidic conditioner to shut the cuticles fast."
-                    ]
-                },
-                'Matt Khaki': {
-                    brandFormulas: `<b>• MILBON:</b> Ordeve [9-mAs Matt Ash] or Addicthy [Emerald 9] + ${developerStr} Developer<br><br> <b>• WELLA:</b> Koleston Perfect 8/2 (Matt Blonde)<br><br> <b>• L'OREAL:</b> Majirel 8.7 (Matt Blonde)`,
-                    steps: [
-                        `Diagnosis: Base Level ${baseHair.level} (${baseHair.undertone} undertone). Action: ${actionType}.`,
-                        "Designed beautifully to cancel out stubborn red undertones in dark hair.",
-                        "Apply uniformly from roots to ends if your base color is consistent.",
-                        "Let it process for 30 minutes.",
-                        "Note: If hair is heavily bleached, this can turn into an intense green, so avoid on level 10+ base."
-                    ]
-                },
-                'Chocolat': {
-                    brandFormulas: `<b>• MILBON:</b> Ordeve [7-nBG Noble Beige] + [7-sMA Sepia Pearl] (Ratio 1:1) + ${developerStr} Developer<br><br> <b>• WELLA:</b> Koleston Perfect 6/77 (Deep Brown)<br><br> <b>• L'OREAL:</b> Majirel 5.35 (Warm Chocolate Brown)`,
-                    steps: [
-                        `Diagnosis: Base Level ${baseHair.level} (${baseHair.undertone} undertone). Action: ${actionType}.`,
-                        "Super forgiving and classy shade. Perfect for covering uneven patchy bleach.",
-                        "Apply evenly throughout the head.",
-                        "Process for 30 minutes at room temperature.",
-                        "Provides high shine and locks deep within the cortex. Finish with an oil treatment."
-                    ]
-                }
-            };
-
-            const selectedRecipe = recipeDB[selectedTarget];
-            productEl.innerHTML = selectedRecipe.brandFormulas;
-            stepsEl.innerHTML = "";
-
-            // 4. Inject Pre-lighten Warning
-            if (targetInfo.requiresBleach && baseHair.level < 9) {
-                const alertCard = document.createElement('div');
-                alertCard.style.cssText = "background: #fff0f3; border-left: 4px solid var(--pink-glam); padding: 12px; border-radius: 8px; margin-bottom: 15px; font-weight: 700; color: #d63031; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(255, 117, 140, 0.15);";
-                alertCard.innerHTML = `⚠️ TECHNICAL NOTICE: Your underlying pigment is Level ${baseHair.level} (${baseHair.undertone}). To achieve a true ${selectedTarget}, you must be Level 9/10 Yellow. Pre-lighten using Milbon Addicthy Bleach Line with 6% Oxydent first before applying this formula!`;
-                stepsEl.appendChild(alertCard);
-            }
-
-            selectedRecipe.steps.forEach((step, index) => {
-                const li = document.createElement('li');
-                if (index === 0) {
-                    // 추출된 색상을 미리 보여주는 작은 컬러 칩 추가
-                    li.innerHTML = `<strong><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:${baseHair.hex}; border:1px solid #ccc; margin-right:5px;"></span>${step}</strong>`;
-                } else {
-                    li.innerText = step;
-                }
-                li.style.marginBottom = "8px";
-                stepsEl.appendChild(li);
-            });
-
-            resultBox.style.display = 'block';
-            resultBox.scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+    window.hairLabState = state;
+  </script>
 </body>
 </html>
